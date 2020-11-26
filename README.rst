@@ -1,6 +1,6 @@
-========
-branesta
-========
+=======================
+BRAin NEtwork STAbility
+=======================
 
 
 .. image:: https://img.shields.io/pypi/v/branesta.svg
@@ -48,8 +48,7 @@ For functional networks (labeled as "subnetworks" in our program), the procedure
 Features
 --------
 
-This is a command line tool, allowing execution with a single line.
-Computes network stability at every tau value, and optionally for multiple subnetworks.
+This is a command line tool, allowing execution with a single line. It computes network stability at every tau value, and optionally for multiple subnetworks.
 
 Credits
 -------
