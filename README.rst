@@ -26,10 +26,6 @@ Tool for computing brain network stability, a biomarker for brain aging.
 * Free software: MIT license
 * Documentation: https://branesta.readthedocs.io.
 
-brain\_network\_stability
-===========================
-
-
 Please cite our article:
 
 | Mujica-Parodi, Lilianne R., et al. "Diet modulates brain network
@@ -52,7 +48,8 @@ For functional networks (labeled as "subnetworks" in our program), the procedure
 Features
 --------
 
-* TODO
+This is a command line tool, allowing execution with a single line.
+Computes network stability at every tau value, and optionally for multiple subnetworks.
 
 Credits
 -------
