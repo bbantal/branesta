@@ -34,7 +34,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="Tool for computing brain network stability, a bbiomarker for brain aging.",
+    description="Tool for computing brain network stability, a biomarker for brain aging.",
     entry_points={
         'console_scripts': [
             'branesta=branesta.cli:main',
