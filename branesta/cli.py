@@ -2,7 +2,7 @@
 
 import argparse
 from datetime import datetime
-import branesta
+from branesta.branesta import NetworkMetricsPipeline, compute_network_stability, analyze
 
 def main():
     """Console script for branesta."""

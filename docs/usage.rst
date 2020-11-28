@@ -2,11 +2,8 @@
 Usage
 =====
 
-To use branesta in a project::
 
-    import branesta
-
-Once installed, run main.py with the following arguments:
+To use branesta, simply run branesta command from terminal and provive the following arguments
 
 srcdir: path to times-series to analyze. There are certain requirements for the input time-series:
 1. Must be parcelled into ROIs, max 1000 ROIs
@@ -25,5 +22,9 @@ win_len: number of time-frames within each time window. With a TR of ~1s, at lea
 --tot_len: optional, expected length of input time-series. If provided together with tot_roi_num, the program checks for proper shape of every input file.
 
 --tot_roi_num: optional, expected number of spatial ROIs. If provided together with tot_len, the program checks for proper shape of every input file.
+
+To use branesta in a python shell:
+    import branesta.branesta
+
 
 We plan to add more details here. Contact me if you need help.
