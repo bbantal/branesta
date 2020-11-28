@@ -28,11 +28,7 @@ Tool for computing brain network stability, a biomarker for brain aging.
 
 Please cite our article:
 
-| Mujica-Parodi, Lilianne R., et al. "Diet modulates brain network
-stability, a biomarker for brain aging, in young adults."
-| Proceedings of the National Academy of Sciences 117.11 (2020):
-6170-6177.
-
+Mujica-Parodi, Lilianne R., et al. "Diet modulates brain network stability, a biomarker for brain aging, in young adults." Proceedings of the National Academy of Sciences 117.11 (2020): 6170-6177.
 link: https://www.pnas.org/content/117/11/6170
 
 
