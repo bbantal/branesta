@@ -32,7 +32,7 @@ Mujica-Parodi, Lilianne R., et al. "Diet modulates brain network stability, a bi
 link: https://www.pnas.org/content/117/11/6170
 
 
-Description:
+Description
 ------------
 
 Brain network stability measures the extent of temporal reorganization that takes place in brain networks. Brain networks describe inter-regional communication across the brain. Lower network stability (represented by higher values) is related to weaker persistence of brain networks. Network stability and network instability are used interchangibly. When it comes to the metric itself, both expressions refer to the exact same.
