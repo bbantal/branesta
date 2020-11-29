@@ -182,7 +182,7 @@ def compute_network_stability(
 
     # Status
     text = f"Loading {file}"
-    print(text)
+#    print(text)
     logging.info(text)
 
     # Construct meta data according to BIDS
@@ -210,8 +210,8 @@ def compute_network_stability(
         if roi_time_series.shape != (tot_len, tot_roi_num):
             text = f"\n[!] Abnormal shape {roi_time_series.shape} in item: " \
             f"{file}! Item will be excluded!\n"
-            print(text)
-            logging.info(text)
+#            print(text)
+            logging.warning(text)
             return
 
     # Check for zero/close-to-zero ROIs
@@ -219,15 +219,15 @@ def compute_network_stability(
     zero_rois = np.argwhere(roi_means < 1e-10)
     if len(zero_rois) > 0:
         text = f"[!] Zero ROI(s) {zero_rois} found in item: {file}! Proceeding."
-        print(text)
-        logging.info(text)
+#        print(text)
+        logging.warning(text)
 
     # Compute metrics
     # -------
 
     # Status
     text = f"Computing metrics for {file}"
-    print(text)
+#    print(text)
     logging.info(text)
 
     # Compute stability
@@ -240,7 +240,7 @@ def compute_network_stability(
 
     # Status
     text = f"Finished computations for {file}"
-    print(text)
+#    print(text)
     logging.info(text)
 
     # Returns
@@ -267,9 +267,12 @@ def analyze(ver, srcdir, outdir, subnetpath=None, **opts):
     """
 
     # Set up logger
-    logging.basicConfig(filename=os.path.join(outdir, f"{ver}.log"),
-                        level=logging.DEBUG,
+    logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s %(levelname)-8s %(message)s',
+                        handlers=[
+                                logging.FileHandler(
+                                    filename=os.path.join(outdir, f"{ver}.log")),
+                                logging.StreamHandler()],
                         datefmt='%Y-%m-%d %H:%M:%S')
 
     # Dict to store edge indexes for each subnetwork
@@ -304,7 +307,7 @@ def analyze(ver, srcdir, outdir, subnetpath=None, **opts):
                         if key != "subnet_ixs" else  \
                         ": ".join([str(key), str(list(value.keys()))]) \
                         for key, value in analysis_kwargs.items()])
-    print(text)
+#    print(text)
     logging.info(text)
 
     # Collect files to analyze
@@ -333,7 +336,7 @@ def analyze(ver, srcdir, outdir, subnetpath=None, **opts):
 
     # Status
     text = f"Analysis has finished. Number of files analyzed: {len(out)}."
-    print(text)
+#    print(text)
     logging.info(text)
 
     # Shut down logging
