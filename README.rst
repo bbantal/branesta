@@ -20,9 +20,10 @@ BRAin NEtwork STAbility
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
      :target: https://opensource.org/licenses/MIT
 
+Introduction
+------------
 
 Tool for computing brain network stability, a biomarker for brain aging.
-
 
 * Free software: MIT license
 * Documentation: https://branesta.readthedocs.io.

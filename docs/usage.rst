@@ -2,7 +2,7 @@
 Usage
 =====
 
-To diplay options, simply run the following line in terminaal
+To diplay options, simply run the following line in terminal:
 
 .. code-block:: console
 
