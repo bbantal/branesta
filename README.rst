@@ -3,6 +3,9 @@ BRAin NEtwork STAbility
 =======================
 
 
+.. image:: https://data.caltech.edu/badge/doi/10.1073/pnas.1913042117.svg
+        :target: https://doi.org/10.1073/pnas.1913042117
+
 .. image:: https://img.shields.io/pypi/v/branesta.svg
         :target: https://pypi.python.org/pypi/branesta
 
