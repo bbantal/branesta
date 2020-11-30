@@ -17,7 +17,7 @@ BRAin NEtwork STAbility
      :target: https://pyup.io/repos/github/BotondA/branesta/
      :alt: Updates
 
-.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+.. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
      :target: https://opensource.org/licenses/MIT
 
 
