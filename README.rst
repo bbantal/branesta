@@ -49,7 +49,11 @@ For functional networks (labeled as "subnetworks" in our program), the procedure
 Features
 --------
 
-This is a command line tool, allowing execution with a single line. It computes network stability at every tau value, and optionally for multiple subnetworks.
+* computes network stability from parcelled time-series
+* performs computations at every τ
+* computes for subnetworks (optional)
+* easy to install (pip)
+* command line tool, single line execution
 
 Credits
 -------
