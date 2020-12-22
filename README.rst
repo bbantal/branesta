@@ -16,10 +16,6 @@ BRAin NEtwork STAbility
         :target: https://branesta.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/BotondA/branesta/shield.svg
-     :target: https://pyup.io/repos/github/BotondA/branesta/
-     :alt: Updates
-
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
      :target: https://opensource.org/licenses/MIT
 
