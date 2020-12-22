@@ -19,7 +19,7 @@ BRAin NEtwork STAbility
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
      :target: https://opensource.org/licenses/MIT
 
-|br|
+:raw-html:`<br />`
 
 .. image:: assets/logo.png
     :scale: 100%
@@ -42,7 +42,7 @@ link: https://www.pnas.org/content/117/11/6170
 Description
 ------------
 
-Brain network stability measures the extent of temporal reorganization that takes place in brain networks. Brain networks describe inter-regional communication across the brain. Lower network stability (represented by higher values) is related to weaker persistence of brain networks. Network stability and network instability are used interchangibly. When it comes to the metric itself, both expressions refer to the exact same.
+Brain network stability measures the extent of temporal reorganization that takes place in brain networks. Brain networks describe inter-regional communication across the brain. Lower network stability (represented by higher values) is related to weaker persistence of brain networks. The terms Network Stability and Network INstability are used interchangibly and they refer to the exact same metric.
 
 The procedure of computing brain network stability is as follows: fMRI time-series that were previously parcelled into ROIs are first binned into time windows (=snapshots) of N timepoints without overlaps. Next, pairwise correlations among all ROIs are computed separately for each time window. For the whole brain, brain network stability (scalar) is quantified by taking the l2 norm of the element-wise differences of correlation matrices corresponding to two different snapshots. τ is the number of steps separating two snapshots from which a given value of brain network stability is calculated from. For instance, if τ=1, two consecutive snapshots snapshots are used (e.g. #4 and #5). If τ=16, then 16 snapshots are separating the two snapshots (e.g. #3 and #19). If the time-series have a length of 720 timepoints, then there will be 24 snapshots (720/30=24, given N=30). At τ=1, there are 23 instability values, whereas at τ=20 4 different instability values are calculated.
 
@@ -54,8 +54,9 @@ Features
 * computes network stability from parcelled time-series
 * performs computations at every τ
 * computes for subnetworks (optional)
+* allows user-defined time window length
 * easy to install (pip)
-* command line tool, single line execution
+* command line tool
 
 Credits
 -------
