@@ -2,11 +2,16 @@
 History
 =======
 
+0.1.6 (2020-12-22)
+------------------
+
+* Added logo
+
+
 0.1.5 (2020-12-22)
 ------------------
 
 * Added unittests.
-* Added logo image.
 * Updated imports.
 
 
