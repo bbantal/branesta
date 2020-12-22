@@ -40,4 +40,5 @@ class TestBranesta(unittest.TestCase):
         ref = pd.read_csv(glob.glob("tests/ref/brain_network_stability_*.csv")[-1])
 
         # Assert equality
-        pd.testing.assert_frame_equal(out, ref)
+#        pd.testing.assert_frame_equal(out, ref)
+        assert 2 == 1, "2 is not equal to 1"

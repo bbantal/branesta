@@ -10,7 +10,7 @@ BRAin NEtwork STAbility
         :target: https://pypi.python.org/pypi/branesta
 
 .. image:: https://img.shields.io/travis/BotondA/branesta.svg
-        :target: https://travis-ci.com/BotondA/branesta
+        :target: https://travis-ci.org/BotondA/branesta
 
 .. image:: https://readthedocs.org/projects/branesta/badge/?version=latest
         :target: https://branesta.readthedocs.io/en/latest/?badge=latest
