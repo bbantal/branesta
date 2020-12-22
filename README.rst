@@ -19,7 +19,7 @@ BRAin NEtwork STAbility
 .. image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
      :target: https://opensource.org/licenses/MIT
 
-:raw-html:`<br />`
+| 
 
 .. image:: assets/logo.png
     :scale: 100%
