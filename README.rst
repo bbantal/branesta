@@ -21,7 +21,7 @@ BRAin NEtwork STAbility
 
 | 
 
-.. image:: assets/logo.png
+.. image:: assets/logo_w_text.png
     :scale: 100%
     :align: center
 
@@ -60,6 +60,10 @@ Features
 
 Credits
 -------
+
+This package was developed within the Laboratory for Computational Neurodiagnostics (LCNeuro_).
+
+.. _LCNeuro: https://lcneuro.org
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
