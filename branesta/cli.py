@@ -1,8 +1,9 @@
 """Console script for branesta."""
 
+import sys
 import argparse
 from datetime import datetime
-from branesta.branesta import NetworkMetricsPipeline, compute_network_stability, analyze
+from branesta import branesta
 
 def main():
     """Console script for branesta."""
@@ -17,17 +18,17 @@ def main():
                         help="path to out directory for results and logs")
     parser.add_argument('win_len', default=30, type=int,
                         help="number of time-frames in each snapshot")
-    parser.add_argument('--subnetpath','-s',
+    parser.add_argument('-s', '--subnetpath',
                         help="path to csv file with subnetwork labels and ixs, optional")
-    parser.add_argument('--tot_len','-l', type=int,
+    parser.add_argument('-l', '--tot_len', type=int,
                         help="expected total number of time frames, optional")
-    parser.add_argument('--tot_roi_num','-r', type=int,
+    parser.add_argument('-r', '--tot_roi_num', type=int,
                         help="expected total number of ROIs, optional")
     args = parser.parse_args()
 
     # Call analysis
-    analyze(ver, **vars(args))
-    
+    branesta.analyze(ver, **vars(args))
+
     return 0
 
 
