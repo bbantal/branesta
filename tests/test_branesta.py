@@ -31,7 +31,7 @@ class TestBranesta(unittest.TestCase):
 
 
     def test_branesta(self):
-        """Test something."""
+        """Test whether output csv with stability values is as expected."""
 
         # Open output
         out = pd.read_csv("tests/temp/brain_network_stability_test.csv")
@@ -39,6 +39,9 @@ class TestBranesta(unittest.TestCase):
         # Open reference
         ref = pd.read_csv(glob.glob("tests/ref/brain_network_stability_*.csv")[-1])
 
+        # Print some info
+        print("Info from test-case:", "\nshape:", out.shape, "\nhead:\n", out.head())
+
         # Assert equality
-#        pd.testing.assert_frame_equal(out, ref)
-        assert 2 == 1, "2 is not equal to 1"
+        pd.testing.assert_frame_equal(out, ref)
+

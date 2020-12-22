@@ -22,7 +22,7 @@ BRAin NEtwork STAbility
 | 
 
 .. image:: assets/logo_w_text.png
-    :scale: 100%
+    :scale: 110%
     :align: center
 
 Introduction
