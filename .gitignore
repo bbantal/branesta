@@ -103,3 +103,6 @@ ENV/
 
 # IDE settings
 .vscode/
+
+# Docs build
+docs/_build
