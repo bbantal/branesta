@@ -21,7 +21,7 @@ BRAin NEtwork STAbility
 
 | 
 
-.. image:: assets/logo_w_text.png
+.. image:: https://raw.githubusercontent.com/BotondA/branesta/v0.1.6/assets/logo_w_text.png
 
 
 Introduction
