@@ -27,7 +27,7 @@ BRAin NEtwork STAbility
 Introduction
 ------------
 
-Tool for computing brain network stability, a biomarker for brain aging.
+Branesta is a tool for computing brain network stability, a biomarker for brain aging.
 
 * Free software: MIT license
 * Documentation: https://branesta.readthedocs.io.
@@ -60,7 +60,7 @@ Features
 Credits
 -------
 
-This package was developed within the Laboratory for Computational Neurodiagnostics (LCNeuro_).
+This package was developed within the Laboratory for Computational Neurodiagnostics (LCNeuro_) at Stony Brook University, New York.
 
 .. _LCNeuro: https://lcneuro.org
 
