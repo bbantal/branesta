@@ -1,0 +1,16 @@
+language: python
+python:
+- 3.8
+- 3.7
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: BotondA
+  password:
+    secure: YqKlkF6rtmHxFCKHrrDPb75LOvKE1L54Z594m/PAMo2v/unV4gjLKy9YrgXfBUfgxNKoQHjGh466IzXCZRyUIt19OVQgTCD/x8AMLIge/NLGMZ1RXJqgPW6LKlNxXZrqxX98i5LIJ1X5H+9rN7faXqJi09DQJZ0BCftrHXX2oZrwjvJ0Z9pLo2ckmddutTjXJl0BSHOKPievOoIOSzHrCgK0o8E6z1619kSGG80WlTtLdCknqc7s5pe+iP1A0eMUjGUkW2zeEMhgn2yRXEdUHR1iFb7RyA3Ao0LPqFeh5trgOCpBmOLORI7NAmFZMWsLv1BV6vN2hjHdungg2tRONr1EHHNlfTCQYDS219NyKT7IqrU6IuvitHDvK6sxn2lk0CPGc+DC2tiXRzuAFUa/8XjWgWQJl87T95tQFT5K86wlddT69kBVB5lcERX6y3DewS9xHQ590OSp0gaWUNXSCysVBxxykeUSJTmaq3QEAghC/AAsaw6giJgpyrLFC6R3VdB4l6Zhy07ctvSp5VHrDDAIneLEn1TnozY6ivI1ihk0BN8YB5hAzOb1WOL7nryAuy/3RqltpD/ncJMUilruTfpcThYn1XLPKmVEX/AIdt79YLgDK7fWX+ofs4ynica9e/HZHcuLN/q2o6ApQGckQIGuiDA4YRqY8JtZwO51c3E=
+  on:
+    tags: true
+    repo: BotondA/branesta
+    python: 3.8
