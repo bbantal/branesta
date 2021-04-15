@@ -28,37 +28,35 @@ class NetworkMetricsPipeline:
 
         # Convert input time_series to numpy array
         self.roi_time_series = np.array(roi_time_series)
+        self.t_len = roi_time_series.shape[0]
 
     def calc_windows(self, win_len):
         """
-        Divides time-series up into time windows
+        Divides up time-series into time windows.
+        Outputs array of windows.
         """
 
         # Number of windows-1
-        num = int((self.roi_time_series.shape[0] - 1 - \
-                   (self.roi_time_series.shape[0] - 1) % win_len) /
-                  win_len)
+        num = int((self.t_len - 1 - (self.t_len - 1) % win_len) / win_len)
 
         # Indicies at which slicing should occur
-        indicies = np.linspace(win_len, num*win_len, num) \
-                        .astype(int)
+        indicies = np.linspace(win_len, num*win_len, num).astype(int)
 
         # 30 frame long time windows (last window might be shorter)
         windows = np.split(self.roi_time_series, indicies, axis=0)
 
         # Remove last window if shorter than window_size
-        windows = windows[:-1] \
-            if self.roi_time_series.shape[0] % win_len > 0 \
-            else windows
+        windows = windows[:-1] if self.t_len % win_len > 0 else windows
 
-        # Given that all dimensions are consistent, convert list to np array
+        # Given that all dimensions are consistent, convert list to numpy array
         self.windows = np.array(windows)
 
         return self
 
     def calc_corrs(self):
         """
-        Calculates correlations between ROIs
+        Calculates correlations between ROIs.
+        Outputs a list of correlation matrices corresponding to windows.
         """
 
         # Take pairwise correlation of ROI tracers separately within all windows
@@ -69,28 +67,28 @@ class NetworkMetricsPipeline:
 
     def calc_stab(self, subnet_ixs):
         """
-        Calculates network stability
+        Calculates network stability.
+        Outputs a (list of) list of network stability values.
+        One value for each subnetwork within one row for each tau.
         """
 
         # Array of tau values
         self.tau_vals = np.arange(1, len(self.corr_matrices))
 
         # Array for storing normalized stability values
-        self.stability = [None] * len(self.tau_vals)
+        self.stability = []
 
         # Iterate over all taus
         for i, tau in enumerate(self.tau_vals):
 
-            # Pairs of windows at a given tau between which the element-wise
+            # Pairs of windows at a given tau which the element-wise
             # differences of correlations will be calculated between
             window_pairs = [[start, start + tau] \
                        for start in range(len(self.corr_matrices) - tau)]
 
             # Calculate elementwise differences
-            corr_diffs_ls = [np.diff(
-                                (self.corr_matrices[win1],
-                                 self.corr_matrices[win2]),
-                                     axis=0) \
+            corr_diffs_ls = [
+                self.corr_matrices[win1] - self.corr_matrices[win2] \
                                  for win1, win2 in window_pairs]
 
             # Concatenate elementwise differences
@@ -98,8 +96,7 @@ class NetworkMetricsPipeline:
 
             # Preallocate for temporarily storing stability values,
             # filled with nans
-            subnets_stab = np.full(
-                    (len(subnet_ixs), len(self.tau_vals)), np.nan)
+            subnets_stab = np.full((len(subnet_ixs), len(self.tau_vals)), np.nan)
 
             # Iterate over all fROIs
             for j, ixs in enumerate(subnet_ixs.values()):
@@ -108,21 +105,22 @@ class NetworkMetricsPipeline:
                 subnet_corr_diffs = corr_diffs[:, ixs[0], ixs[1]]
 
                 # Take l2norm
-                stabs_prenorm = \
-                    np.linalg.norm(subnet_corr_diffs, axis=1)
+                stabs_prenorm = np.linalg.norm(subnet_corr_diffs, axis=1)
 
-                # Normalize with sqroot of number of non-main-diagonal values
-                subnets_stab[j][:len(corr_diffs)] =  stabs_prenorm/ \
+                # Normalize with sqroot of number of non-main-diagonal edges
+                subnets_stab[j][:len(corr_diffs)] = stabs_prenorm/ \
                     np.sqrt(np.sqrt(len(ixs.T))*(np.sqrt(len(ixs.T))-1))
 
             # Store computed stability values
-            self.stability[i] = list(subnets_stab.T)
+            self.stability.append(list(subnets_stab.T))
 
         return self
 
     def convert_stab_to_df(self, meta, subnet_ixs):
         """
-        Converts computed stability values to dataframe
+        Converts computed stability values to dataframe.
+        Outputs pandas dataframe with network stability values
+        and labeled columns.
         """
 
         # Indexes
