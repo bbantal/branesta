@@ -18,7 +18,7 @@ class TestBranesta(unittest.TestCase):
 
         # Run branesta, output results into temp dir
         branesta.analyze(
-                "test", "tests/testdata/ts", "tests/temp/", win_len=30,
+                "tests", "tests/testdata/ts", "tests/temp/", win_len=30,
                 subnetpath="tests/testdata/subnets/subnetworks_willard.csv",
                 tot_len=720, tot_roi_num=498
             )
@@ -34,7 +34,7 @@ class TestBranesta(unittest.TestCase):
         """Test whether output csv with stability values is as expected."""
 
         # Open output
-        out = pd.read_csv("tests/temp/brain_network_stability_test.csv")
+        out = pd.read_csv("tests/temp/brain_network_stability_tests.csv")
 
         # Open reference
         ref = pd.read_csv(glob.glob("tests/ref/brain_network_stability_*.csv")[-1])

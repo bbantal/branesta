@@ -92,7 +92,7 @@ class NetworkMetricsPipeline:
                                  for win1, win2 in window_pairs]
 
             # Concatenate elementwise differences
-            corr_diffs = np.concatenate(corr_diffs_ls)
+            corr_diffs = np.array(corr_diffs_ls)
 
             # Preallocate for temporarily storing stability values,
             # filled with nans
@@ -179,9 +179,9 @@ def compute_network_stability(
     # --------
 
     # Status
-    text = f"Loading {file}"
+    # text = f"Loading {file}"
 #    print(text)
-    logging.info(text)
+    # logging.info(text)
 
     # Construct meta data according to BIDS
     # example: {'sub': '057', 'ses': 'glc', 'task': 'task', 'run': '2'}
@@ -237,10 +237,10 @@ def compute_network_stability(
         .df
 
     # Status
-    text = f"Finished computations for {file}"
+    # text = f"Finished computations for {file}"
 #    print(text)
-    logging.info(text)
-
+    # logging.info(text)
+#
     # Returns
     return df
 
